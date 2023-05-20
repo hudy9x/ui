@@ -4,7 +4,7 @@ import Message from "../../../containers/Message";
 import Tooltip from "../../../containers/Tooltip";
 import Pagination from "../../../containers/Pagination";
 
-export default function Page({ params }) {
+export default function Page({ params }: { params: { component: string } }) {
   console.log(params, "owijeroiwjeorij");
   const component = params.component;
   if (component === "button") {
