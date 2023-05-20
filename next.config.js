@@ -24,10 +24,10 @@ const nextConfig = {
       {
         source: "/",
         destination: "/button",
-        permanent: true
-      }
-    ]
-  }
+        permanent: true,
+      },
+    ];
+  },
 };
 
 // Merge MDX config with Next.js config
