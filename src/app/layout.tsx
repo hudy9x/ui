@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,52 +15,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const tabs = [
-    {
-      id: "document",
-      title: "Getting started",
-      children: [
-        { href: "introduction", title: "Introduction" },
-        { href: "installation", title: "Installation" },
-        { href: "theming", title: "Theming" },
-      ],
-    },
-    {
-      id: "component",
-      title: "Components",
-      children: [
-        {
-          href: "pagination",
-          title: "Pagination",
-        },
-        {
-          href: "list",
-          title: "List",
-        },
-        {
-          href: "tooltip",
-          title: "Tooltip",
-        },
-        {
-          href: "form",
-          title: "Form",
-        },
-        {
-          href: "message",
-          title: "Message",
-        },
-        {
-          href: "button",
-          title: "Button",
-        },
-        {
-          href: "checkbox",
-          title: "Checkbox",
-        },
-      ],
-    },
-  ];
-
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -118,31 +73,7 @@ export default function RootLayout({
           </header>
           <main className="main-content">
             <div className="mcontainer">
-              <aside className="sidebar">
-                <nav>
-                  {tabs.map((group) => {
-                    return (
-                      <div key={group.id}>
-                        <h2>{group.title}</h2>
-                        <div>
-                          {group.children.map((item, idx) => {
-                            const isActive = "";
-                            return (
-                              <Link
-                                href={`/${item.href}`}
-                                key={idx}
-                                className={`sidebar-item ${isActive}`}
-                              >
-                                # {item.title}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </nav>
-              </aside>
+              <Navbar />
               <div className="content">{children}</div>
             </div>
           </main>
@@ -158,3 +89,4 @@ export default function RootLayout({
     </html>
   );
 }
+
