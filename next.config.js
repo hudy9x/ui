@@ -23,7 +23,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/button",
+        destination: "/documentaion/button",
         permanent: true,
       },
     ];
