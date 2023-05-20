@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './grayscale-light.css';
+@import "./grayscale-light.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -57,15 +57,13 @@ footer .mcontainer {
 }
 
 .sidebar {
-  @apply w-[200px] shrink-0 relative h-screen overflow-x-hidden overflow-y-auto;
-  @apply text-sm pt-5;
-  /* @apply flex flex-col gap-2 h-screen bg-indigo-50/30 w-[250px]; */
-  /* @apply py-4 px-3 border-r border-gray-200; */
-  /* @apply shrink-0; */
+  @apply w-[200px] shrink-0 relative h-screen;
+  @apply text-sm;
 }
 
 .sidebar nav {
-  @apply sticky top-0 left-0;
+  @apply sticky top-0 left-0 bottom-0 ;
+
 }
 
 .sidebar-item {

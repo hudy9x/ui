@@ -52,28 +52,32 @@ export default function Navbar() {
   ];
   return (
     <aside className="sidebar">
-      <nav className="space-y-8">
-        {tabs.map((group) => {
-          return (
-            <div key={group.id}>
-              <h2 className="pb-2">{group.title}</h2>
-              <div>
-                {group.children.map((item, idx) => {
-                  const isActive = pathname.includes(item.href) ? "active" : "";
-                  return (
-                    <Link
-                      href={`/${item.href}`}
-                      key={idx}
-                      className={`sidebar-item ${isActive}`}
-                    >
-                      # {item.title}
-                    </Link>
-                  );
-                })}
+      <nav>
+        <div className="overflow-y-auto overflow-x-hidden space-y-8 pt-5" >
+          {tabs.map((group) => {
+            return (
+              <div key={group.id}>
+                <h2 className="pb-2">{group.title}</h2>
+                <div>
+                  {group.children.map((item, idx) => {
+                    const isActive = pathname.includes(item.href)
+                      ? "active"
+                      : "";
+                    return (
+                      <Link
+                        href={`/${item.href}`}
+                        key={idx}
+                        className={`sidebar-item ${isActive}`}
+                      >
+                        # {item.title}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </nav>
     </aside>
   );
